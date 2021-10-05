@@ -14,9 +14,7 @@
 <%# 着信時に相手の映像を表示するvideo要素 %>
 <video id="their-video" width="400px" autoplay muted playsinline></video>
 
-
 <script>
-
   let localStream;
   const API_KEY = gon.api_key;
 
@@ -72,5 +70,4 @@
   peer.on('error', err => {
     alert(err.message);
 });
-
 </script>
