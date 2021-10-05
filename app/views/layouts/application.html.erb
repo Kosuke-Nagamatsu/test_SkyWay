@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>TestSkywayApp</title>
+    <title>SkywayTestApp</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
+    <%= include_gon %>
+    <%# CDNを利用 %>
+    <script src="https://cdn.webrtc.ecl.ntt.com/skyway-4.4.1.js"></script>
   </head>
 
   <body>
