@@ -8,6 +8,9 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+// 追加
+import 'script'
+
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()
