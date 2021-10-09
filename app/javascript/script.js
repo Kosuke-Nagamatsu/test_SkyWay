@@ -1,5 +1,5 @@
 window.onload = () => {
-  
+
   const Peer = window.Peer;
   // SkyWayのAPIキーを定数に保存
   const SKYWAY_KEY = gon.api_key;
@@ -65,6 +65,11 @@ window.onload = () => {
         remoteVideo.srcObject = stream;
         remoteVideo.playsInline = true;
         await remoteVideo.play().catch(console.error);
+
+        // 開始日時を取得
+        var startTime = Date.now();
+        // 1秒ごとに関数showCountdown(startTime)を実行
+        setInterval(function(){showCountdown(startTime)}, 1000);
       });
 
       // mediaConnection.close()が呼ばれたとき
@@ -94,6 +99,11 @@ window.onload = () => {
         remoteVideo.srcObject = stream;
         remoteVideo.playsInline = true;
         await remoteVideo.play().catch(console.error);
+
+        // 開始日時を取得
+        var startTime = Date.now();
+        // 1秒ごとに関数showCountdown(startTime)を実行
+        setInterval(function(){showCountdown(startTime)}, 1000);
       });
       
       // mediaConnection.close()が呼ばれたとき
@@ -111,4 +121,35 @@ window.onload = () => {
     // エラーが発生した場合の処理
     peer.on('error', console.error);
   })();
+};
+
+
+// 残り時間をカウントダウン表示する
+const showCountdown = startTime => {
+
+  // 現在日時を取得(1970-01-01 00:00:00からのミリ秒)
+  var nowTime = Date.now();
+  // 開始日時に20000ミリ秒を足して終了時間を用意（テスト用で開始から20秒後）
+  var endTime = startTime + 20000;
+  // 引き算して残り時間を計算
+  var limitTime = endTime - nowTime;
+
+  // 残り時間のミリ秒を、分と秒に分割
+  var limitMin = limitTime / ( 1000 * 60 );   // 分
+  limitTime = limitTime % ( 1000 * 60 );
+  var limitSec = limitTime / 1000;   // 秒
+  var msg = Math.floor(limitMin) + "分" + Math.floor(limitSec) + "秒";
+
+  // 表示する文字列の作成
+  if( limitTime > 0 ) {
+     // 残り時間がある場合
+     msg = "あと " + msg + " です。";
+  }
+  else {
+     // 残り時間がなくなって以降
+     msg = "Enjoy your trip！";
+  }
+
+  // 作成した文字列を表示
+  document.getElementById("count-down").innerHTML = msg;
 };
