@@ -10,6 +10,7 @@ import "channels"
 
 // 追加
 import 'script'
+import "../stylesheets/application"
 
 Rails.start()
 Turbolinks.start()
