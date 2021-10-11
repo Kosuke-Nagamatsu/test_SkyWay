@@ -9,7 +9,7 @@ import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
 // 追加
-import 'script'
+import "script"
 import "../stylesheets/application"
 
 Rails.start()
