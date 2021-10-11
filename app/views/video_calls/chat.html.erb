@@ -1,23 +1,33 @@
-<div class="container">
-
-  <%# 残り時間のタイマーを表示 %>
-  <p id="count-down"></p>
-  
-  <h1 class="heading">P2P Media example</h1>
-  <p class="note">
-    Enter remote peer ID to call.
-  </p>
-  <div class="p2p-media">
-    <div class="remote-stream">
-      <video id="js-remote-stream"></video>
+<div class="bg-info pb-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-6 p-3">
+        <h1 class="display-5 text-white">Enter remote peer ID to call.</h1>
+      </div>
+      <div class="col-6 p-3">
+        <!-- 残り時間のタイマーを表示 -->
+        <p id="count-down" class="lead text-white text-end"></p>
+      </div>
     </div>
-    <div class="local-stream">
-      <video id="js-local-stream"></video>
-      <p>Your ID: <span id="js-local-id"></span></p>
-      <input type="text" placeholder="Remote Peer ID" id="js-remote-id">
-      <button id="js-call-trigger">Call</button>
-      <button id="js-close-trigger">Close</button>
+    <div class="row">
+      <!-- 自分のカメラ映像を表示するエリア -->
+      <div class="local-stream col-md-6 p-3 bg-light rounded">
+        <video id="js-local-stream"></video>
+        <p class="lead">Your ID: <mark id="js-local-id"></mark></p>
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control" placeholder="Peer ID" id="js-remote-id">
+          <label for="floatingInput">相手のIDを入れてCallしてください</label>
+        </div>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+          <button id="js-call-trigger" class="btn btn-primary me-md-2">Call</button>
+          <button id="js-close-trigger" class="btn btn-danger">Close</button>
+        </div>
+      </div>
+      <!-- 相手のカメラ映像を表示するエリア -->
+      <div class="remote-stream col-md-6 p-3 bg-dark rounded">
+        <video id="js-remote-stream"></video>
+      </div>
     </div>
+    <p class="meta" id="js-meta"></p>
   </div>
-  <p class="meta" id="js-meta"></p>
 </div>
