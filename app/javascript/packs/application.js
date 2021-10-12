@@ -10,6 +10,7 @@ import "channels"
 
 // 追加
 import "script"
+import 'bootstrap'
 import "../stylesheets/application"
 
 Rails.start()
