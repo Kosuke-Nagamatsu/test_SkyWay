@@ -16,10 +16,7 @@ window.onload = () => {
     // src属性値（読込元を指定するためのURI）に'skyway'を含むscript要素を取得
     const sdkSrc = document.querySelector('script[src*=skyway]');
     
-    meta.innerText = `
-      UA: ${navigator.userAgent}
-      SDK: ${sdkSrc ? sdkSrc.src : 'unknown'}
-    `.trim();
+    meta.innerText = `UA: ${navigator.userAgent}`.trim();
     
     // getUserMediaで取得した自分のカメラ映像をlocalStreamへ保存
     const localStream = await navigator.mediaDevices

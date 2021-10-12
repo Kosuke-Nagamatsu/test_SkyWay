@@ -1,5 +1,15 @@
 @import '~bootstrap/scss/bootstrap';
 
+
+html, body {
+  height: 100%;
+}
+
+$soft-blue: #50B4F2;
+.bg-soft-blue {
+  background-color: $soft-blue;
+}
+
 video {
-  max-width: 100%;
+  width: 100%;
 }
