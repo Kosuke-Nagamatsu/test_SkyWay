@@ -11,7 +11,6 @@ import "channels"
 // 追加
 import 'bootstrap'
 import "../stylesheets/application"
-import "jquery"
 
 Rails.start()
 // Turbolinks.start()
