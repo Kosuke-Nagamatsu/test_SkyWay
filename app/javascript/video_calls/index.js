@@ -2,7 +2,7 @@ window.addEventListener('load', () => {
 
   const Peer = window.Peer;
   // SkyWayのAPIキーを定数に保存
-  const SKYWAY_KEY = gon.api_key;
+  const SKYWAY_KEY = process.env.SKY_WAY_API_KEY;
 
   (async function main() {
     // 各idに一致する要素オブジェクトを取得し、定数に保存
