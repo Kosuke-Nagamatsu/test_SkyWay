@@ -1,0 +1,14 @@
+<div class="bg-light min-vh-100">
+  <div class="container-md">
+    <div class="row text-center py-5">
+      <div class="col-md-5 offset-md-2">
+        <h1 class="h4"><span class="border-bottom py-1">ビデオチャットの始め方</span></h1>
+        <small class="border-bottom py-1">クリックでページをめくれます</small>
+      </div>
+      <div class="col-md-3 my-3">
+        <%= link_to "スタート", video_calls_chat_path, class: "btn btn-outline-secondary rounded-pill" %>
+      </div>
+    </div>
+    <%= react_component('PageFlip') %>
+  </div>
+</div>
