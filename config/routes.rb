@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  root 'video_calls#chat'
+  root 'tops#index'
+  get 'video_calls/chat'
 end
