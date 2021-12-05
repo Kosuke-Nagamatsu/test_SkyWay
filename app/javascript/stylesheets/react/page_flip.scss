@@ -1,0 +1,12 @@
+.contents {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.oddPage {
+  .contents {
+    text-align: center;
+  }
+}
