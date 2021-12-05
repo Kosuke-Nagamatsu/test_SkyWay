@@ -136,20 +136,20 @@ window.addEventListener('load', () => {
 
 
 // 残り時間をカウントダウン表示する
-const showCountdown = startTime => {
+function showCountdown(startTime) {
 
   // 現在日時を取得(1970-01-01 00:00:00からのミリ秒)
-  var nowTime = Date.now();
+  let nowTime = Date.now();
   // 開始日時に20000ミリ秒を足して終了時間を用意（テスト用で開始から20秒後）
-  var endTime = startTime + 20000;
+  let endTime = startTime + 20000;
   // 引き算して残り時間を計算
-  var limitTime = endTime - nowTime;
+  let limitTime = endTime - nowTime;
 
   // 残り時間のミリ秒を、分と秒に分割
-  var limitMin = limitTime / (1000 * 60);   // 分
+  let limitMin = limitTime / (1000 * 60);   // 分
   limitTime = limitTime % (1000 * 60);
-  var limitSec = limitTime / 1000;   // 秒
-  var msg = Math.floor(limitMin) + '分' + Math.floor(limitSec) + '秒';
+  let limitSec = limitTime / 1000;   // 秒
+  let msg = Math.floor(limitMin) + '分' + Math.floor(limitSec) + '秒';
 
   // 表示する文字列の作成
   if (limitTime > 0) {
@@ -162,5 +162,5 @@ const showCountdown = startTime => {
   }
 
   // 作成した文字列を表示
-  document.getElementById('count-down').innerHTML = msg;
+  document.getElementById('count-down').textContent = msg;
 };
