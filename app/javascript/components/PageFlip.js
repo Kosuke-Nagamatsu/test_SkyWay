@@ -12,16 +12,23 @@ const cardContents = {
   first: {
     titles: {
       main: "ステップ１",
-      sub: "IDを確認"
+      sub: "受信者はログインへ"
     },
-    content: "ルームへ入り Your ID（電話番号）をご確認ください。"
+    content: "ログイン後にルームへお入りください。登録済みのユーザ情報でログイン、または新規アカウントを作成後に受信できます。"
   },
   second: {
     titles: {
       main: "ステップ２",
-      sub: "相手のIDを入れてCall"
+      sub: "発信者はルームへ"
     },
-    content: "自身からまたは相手から「Call」することで、通話が開始します。「Close」を押すと終了します。"
+    content: "ログインせずルームへ入り、ログイン済みユーザへ発信できます。会話したい相手を選択し「Call」すると開始します。なお、ログイン後も発信可能です。"
+  },
+  third: {
+    titles: {
+      main: "ステップ３",
+      sub: "会話を終了"
+    },
+    content: "「Close」で会話を終了します。\nご利用ありがとうございます。"
   }
 }
 
@@ -50,7 +57,7 @@ function getCardContent(content) {
   const card = (
     <Card className="contents" sx={{ minWidth: 275 }}>
       <CardContent>
-        <Typography sx={{ my: 1.5 }} color="text.secondary">
+        <Typography sx={{ my: 1.5 }} color="text.secondary" style={{ whiteSpace: "pre-line" }}>
           {content}
         </Typography>
       </CardContent>
@@ -75,6 +82,12 @@ function PageFlip() {
         </div>
         <div className="evenPage">
           {getCardContent(cardContents.second.content)}
+        </div>
+        <div className="oddPage">
+          {getCardTitle(cardContents.third.titles)}
+        </div>
+        <div className="evenPage">
+          {getCardContent(cardContents.third.content)}
         </div>
       </HTMLFlipBook>
     </div>
