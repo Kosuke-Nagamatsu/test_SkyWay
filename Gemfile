@@ -17,6 +17,7 @@ gem 'react-rails'
 # devise関連
 gem 'devise'
 gem 'rexml'
+gem 'devise-i18n'
 
 # railsでセットした変数をjsで使用
 gem 'gon'
