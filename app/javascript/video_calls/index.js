@@ -3,6 +3,8 @@ window.addEventListener('load', () => {
   const Peer = window.Peer;
   // SkyWayのAPIキーを定数に保存
   const SKYWAY_KEY = process.env.SKY_WAY_API_KEY;
+  // ユーザのpeer_idを定数に保存
+  const USER_PEER_ID = gon.user_peer_id;
 
   (async function main() {
     // 各idに一致する要素オブジェクトを取得し、定数に保存
@@ -12,10 +14,7 @@ window.addEventListener('load', () => {
     const closeTrigger = document.getElementById('js-close-trigger');
     const remoteVideo = document.getElementById('js-remote-stream');
     const remoteId = document.getElementById('js-remote-id');
-    const meta = document.getElementById('js-meta');
     const remotePoster = document.getElementById('remote-poster');
-
-    meta.innerText = `UA: ${navigator.userAgent}`.trim();
 
     // getUserMediaで取得した自分のカメラ映像をlocalStreamへ保存
     const localStream = await navigator.mediaDevices
@@ -34,10 +33,20 @@ window.addEventListener('load', () => {
     // Peer作成
     // new Peer() により、SkyWay のシグナリングサーバと接続できる
     // インスタンスを作成したときに、電話番号にあたるPeerIDを取得
-    const peer = (window.peer = new Peer({
-      key: SKYWAY_KEY,
-      debug: 3,
-    }));
+    let peer;
+    // ユーザの場合、固定IDを指定
+    if (USER_PEER_ID) {
+      peer = (window.peer = new Peer(USER_PEER_ID, {
+        key: SKYWAY_KEY,
+        debug: 3,
+      }));
+      // その他はランダムに作成
+    } else {
+      peer = (window.peer = new Peer({
+        key: SKYWAY_KEY,
+        debug: 3,
+      }));
+    }
 
     // 発信者側
     // Callボタンに対して、clickイベントが発生したときに呼び出される関数を設定
