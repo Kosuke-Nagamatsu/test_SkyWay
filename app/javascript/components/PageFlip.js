@@ -5,7 +5,8 @@ import HTMLFlipBook from 'react-pageflip';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-
+// スタイル
+import '../stylesheets/react/page_flip.scss'
 
 // カードの内容
 const cardContents = {
