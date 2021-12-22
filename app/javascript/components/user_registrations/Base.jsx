@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { TextField, Button } from '@mui/material';
 // 作成したContextをimport
-import { UserInputContext } from './providers/UserInputProvider';
+import { UserInputContext } from '../providers/UserInputProvider';
 
 
 export default function Base(props) {

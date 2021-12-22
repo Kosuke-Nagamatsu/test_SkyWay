@@ -1,7 +1,7 @@
 import React from 'react';
 import { CssBaseline, Container, Box, Grid } from '@mui/material';
 import { Button, ButtonGroup } from '@mui/material';
-import PageFlip from './PageFlip';
+import PageFlip from './tops/PageFlip';
 import '../stylesheets/react/top.scss'
 
 

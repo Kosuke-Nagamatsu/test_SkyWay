@@ -1,7 +1,7 @@
 import React from 'react';
 import HTMLFlipBook from 'react-pageflip';
 import { Card, CardContent, Typography } from '@mui/material';
-import '../stylesheets/react/page_flip.scss'
+import '../../stylesheets/react/page_flip.scss'
 
 
 // 文章データ

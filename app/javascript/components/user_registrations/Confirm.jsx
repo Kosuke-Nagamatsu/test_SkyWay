@@ -2,7 +2,7 @@ import React, { useContext } from 'react';
 import { Table, TableBody, TableCell, TableContainer, TableRow } from '@mui/material';
 import { Paper, Button } from '@mui/material';
 // 作成したContextをimport
-import { UserInputContext } from './providers/UserInputProvider';
+import { UserInputContext } from '../providers/UserInputProvider';
 
 
 export default function Confirm(props) {
