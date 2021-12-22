@@ -1,18 +1,11 @@
 import React from 'react';
-// レイアウト関連
-import CssBaseline from '@mui/material/CssBaseline';
-import Container from '@mui/material/Container';
-import Box from '@mui/material/Box';
-import Grid from '@mui/material/Grid';
-// ボタン
-import Button from '@mui/material/Button';
-import ButtonGroup from '@mui/material/ButtonGroup';
-// ページフリップ
+import { CssBaseline, Container, Box, Grid } from '@mui/material';
+import { Button, ButtonGroup } from '@mui/material';
 import PageFlip from './PageFlip';
-// スタイル
 import '../stylesheets/react/top.scss'
 
-function Top(props) {
+
+export default function Top(props) {
   const isLogin = props.is_login;
 
   return (
@@ -21,11 +14,11 @@ function Top(props) {
       <Container maxWidth="md">
         <Box>
           <Grid container spacing={2} className="header-contents">
-            <Grid item xs={12} md={7}>
+            <Grid item xs={12} md={6}>
               <h1><span>ビデオチャットの始め方</span></h1>
               <small>クリックでページをめくれます</small>
             </Grid>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={5}>
               <Box>
                 <ButtonGroup variant="outlined" aria-label="outlined button group">
                   <Button href="/video_calls/chat">ルームへ入る</Button>
@@ -33,6 +26,7 @@ function Top(props) {
                   {/* ログインの有無でボタン表示を変更 */}
                   {isLogin && <Button href="/users/sign_out" data-method="delete">ログアウト</Button>}
                   {!isLogin && <Button href="/users/sign_in">ログイン</Button>}
+                  {!isLogin && <Button href="/users/sign_up">アカウント</Button>}
 
                 </ButtonGroup>
               </Box>
@@ -47,5 +41,3 @@ function Top(props) {
     </React.Fragment >
   );
 }
-
-export default Top;
