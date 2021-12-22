@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import { Container, Box, Stepper, Step, StepLabel } from '@mui/material';
 import { UserInputProvider } from './providers/UserInputProvider';
-import Base from './Base';
-import Confirm from './Confirm';
+import Base from './user_registrations/Base';
+import Confirm from './user_registrations/Confirm';
 
 
 const steps = ["基本項目", "入力確認"];
