@@ -18,10 +18,10 @@
 
   <body>
     <% if notice %>
-      <p class="alert alert-notice m-0 p-0 alert alert-secondary"><%= notice %></p>
+      <p class="alert alert-secondary m-0 p-0"><%= notice %></p>
     <% end %>
     <% if alert %>
-      <p class="alert alert-error m-0 p-0 alert alert-warning"><%= alert %></p>
+      <p class="alert alert-warning m-0 p-0"><%= alert %></p>
     <% end %>
     <%= yield %>
   </body>
